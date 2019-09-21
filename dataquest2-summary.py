@@ -268,4 +268,69 @@ print(my_list.data)
 # | `datetime - timedelta` | Substract a time period from a date or time | datetime |
 # | `datetime + timedelta` | Add a time period to a date or time | datetime
 # | `timedelta + timedelta` | Add two periods of time together | timedelta |
-# | `timedelta - timedelta` | Calulate the difference betwen two time periods | time delta |
+# | `timedelta - timedelta` | Calulate the difference betwen two time periods | timedelta |
+
+#%%
+import datetime as dt
+# Creating datetime.datetime string given a month, year, and day
+ibm_founded = dt.datetime(1911,6,16)
+print(ibm_founded)
+
+#%%
+# Creating datetime.datetime string give a month, year, day, hour, and minute
+man_on_moon = dt.datetime(1969,7,20,20,17)
+print(man_on_moon)
+
+#%%
+# Creating a datetime.datetime object from a string
+# datetime.strptime(date_string, format)
+date_1_str = "12/24/2019"
+date_1_dt = dt.datetime.strptime(date_1_str, "%m/%d/%Y")
+print(date_1_dt)
+
+#%%
+# Converting a datetime.datetime format from a string
+# datetime.strftime(format)
+dt_object = dt.datetime(1984, 12, 24)
+dt_string = dt_object.strftime("%d/%m/%Y")
+print(dt_string)
+
+#%%
+# Instantiating a datetime.time object
+eg_1 = dt.time(hour = 8, minute = 0, second = 5, microsecond = 0)
+print(eg_1)
+
+#%%
+# Creating a date and a time from a datetime.datetime object
+d1 = dt.datetime(1846, 9, 10, 12, 30)
+d1_date = d1.date()
+d1_time = d1.time()
+print(d1_date)
+print(d1_time)
+
+#%%
+# Instantiating a datetime.timedelta object
+eg_3 = dt.timedelta(weeks=3)
+print(eg_3)
+
+#%%
+# Adding a time period to a datetime.datetime object
+d3 = dt.date(1963, 2, 26)
+d3_plus_1wk = d3 + dt.timedelta(weeks=1)
+print(d3_plus_1wk)
+
+#%%
+dt_1 = dt.datetime(1981, 1, 31)
+dt_2 = dt.datetime(1984, 6, 28)
+dt_3 = dt.datetime(2016, 5, 24)
+dt_4 = dt.datetime(2001, 1, 1, 8, 24, 13)
+
+answer_1 = dt_2 - dt_1
+answer_2 = dt_3 + dt.timedelta(days=56)
+answer_3 = dt_4 - dt.timedelta(seconds=3600)
+answer_4 = dt_2 + dt.timedelta(hours=56)
+
+print(answer_1)
+print(answer_2)
+print(answer_3)
+print(answer_4)
